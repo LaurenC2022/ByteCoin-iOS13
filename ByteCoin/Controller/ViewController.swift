@@ -8,30 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
-    
-    //MARK: - required delegate funtions
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    //function required by UIPickerViewDataSource delegate
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return coinManager.currencyArray.count
-    }
-    
-    //function required by UIPickerViewDataSource delegate
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return coinManager.currencyArray[row]
-    }
-    
-    //function optional for UIPickerViewDelegate
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //print(coinManager.currencyArray[row])
-        
-        let selectedCurrency = coinManager.currencyArray[row]
-        coinManager.performRequest(for: selectedCurrency)
-    }
+class ViewController: UIViewController{
     
     //MARK: - UI elements outlets
     
@@ -64,5 +41,34 @@ extension ViewController: CoinManagerDelegate{
             self.CurrencyLabel.text = coin.asset_id_quote
             self.bitcoinLabel.text = coin.coinString
         }
+    }
+}
+
+//MARK: - UIPickerViewDataSource: required functions for UIPickerViewDataSource delegate
+
+extension ViewController: UIPickerViewDataSource{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    //function required by UIPickerViewDataSource delegate
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return coinManager.currencyArray.count
+    }
+    
+    //function required by UIPickerViewDataSource delegate
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return coinManager.currencyArray[row]
+    }
+}
+
+//MARK: - UIPickerViewDelegate: required functions for UIPickerViewDelegate
+
+extension ViewController: UIPickerViewDelegate{
+    //function optional for UIPickerViewDelegate
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //print(coinManager.currencyArray[row])
+        
+        let selectedCurrency = coinManager.currencyArray[row]
+        coinManager.performRequest(for: selectedCurrency)
     }
 }
