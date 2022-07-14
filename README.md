@@ -19,3 +19,4 @@ Skills use:
 5. Delegate design pattern, and updating user interface delegate design pattern for reusability 
 6. DispatchQueue.main.async
 7. Computed propety
+8. Practicing version control with Git and GitHub
