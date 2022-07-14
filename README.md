@@ -20,3 +20,9 @@ Skills use:
 6. DispatchQueue.main.async
 7. Computed propety
 8. Practicing version control with Git and GitHub
+
+https://user-images.githubusercontent.com/46947791/179119872-6cfc2886-1fcb-454e-a0a4-582b7cd8d377.mp4
+
+![Simulator Screen Shot - iPhone 11 - homescreen](https://user-images.githubusercontent.com/46947791/179119911-d9fd2af2-517e-4a2d-a9bc-6dce69b59b08.png)
+
+![Simulator Screen Shot - iPhone 11 - UI](https://user-images.githubusercontent.com/46947791/179119921-5e7e660d-b017-443d-9c3c-7ec3da76fbc6.png)
