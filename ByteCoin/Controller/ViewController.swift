@@ -54,6 +54,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
 //MARK: - CoinManagerDelegate
 extension ViewController: CoinManagerDelegate{
+    func didFailWithError(error: Error) {
+        print("THIS IS YOUR ERROR: ", error)
+    }
+    
     func didUpdateView(_ coinManager: CoinManager, coin: CoinModel) {
         
         DispatchQueue.main.async {

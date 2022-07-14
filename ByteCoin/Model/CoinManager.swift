@@ -10,7 +10,7 @@ import Foundation
 
 protocol CoinManagerDelegate{
     func didUpdateView(_ coinManager: CoinManager, coin: CoinModel)
-    //    func didFailWithError(error: Error)
+    func didFailWithError(error: Error)
 }
 
 
@@ -76,8 +76,7 @@ extension CoinManager{
             return coin
             
         } catch{
-            print("Error: decodable error")
-            //  delegate?.didFailWithError(error: error)//handle errors with decoding, like JSON not matching format in WeatherData or data did not return from internet properly
+              delegate?.didFailWithError(error: error)//handle errors with decoding, like JSON not matching format in WeatherData or data did not return from internet properly
             return nil
         }
         //Decodable has a thow, which can result in an error. Add try, also a do/catch statement in case it crashes
